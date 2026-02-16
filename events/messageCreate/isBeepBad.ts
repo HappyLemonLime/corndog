@@ -1,7 +1,8 @@
-import { Message, TextChannel, userMention } from "discord.js"
+import { Attachment, Message, TextChannel, userMention } from "discord.js"
 import { channels } from "../../config"
 import { hasHeaders, hasSauce, hasUrl, tracer } from "../../utils"
 import { request } from "undici"
+import { userInfo } from "os"
 
 const reply = async (message: Message, content: string) => {
     const botCommands = (await message.guild.channels.fetch()).get(channels["bot-commands"]) as TextChannel
@@ -14,6 +15,13 @@ const reply = async (message: Message, content: string) => {
 }
 
 export default async function isBeepBad(message: Message): Promise<boolean> {
+
+    if (message.author.bot || message.webhookId || message.applicationId) {
+        tracer.log("A bot sent a message where it shouldn't have.")
+        await reply(message, " bot activities....")
+        return true
+    }
+
     const { cleanContent, channel, attachments } = message
     console.log(attachments.map(attachment => attachment.contentType))
     console.log(cleanContent)
@@ -46,41 +54,41 @@ export default async function isBeepBad(message: Message): Promise<boolean> {
     
     if (tooLong) {
         tracer.log("Message length is bad.")
-        await reply(message, "The character limit is 450 or under. Yours is " + message.cleanContent.length + "! > _<")
+        await reply(message, " The character limit is 450 or under. Yours is " + message.cleanContent.length + "! > _<")
         return true
     }
 
     if (linebreaks?.length >= 5 && !channelIsRecycledBeeps) {
         tracer.log("Message line breaks are bad.")
-        await reply(message, "Too many line breaks! > _<")
+        await reply(message, " Too many line breaks! > _<")
         return true
     }
 
     if (!sauce) {
         tracer.log("No sauce = bad!")
-        await reply(message, "I ain't see no SAUCE???!!! > _< (Please link to a whitelisted mod.)")
+        await reply(message, " I ain't see no SAUCE???!!! > _< (Please link to a whitelisted mod.)")
         return true
     }
 
     if (longLink) {
         tracer.log("A link is too long. BAD.")
-        await reply(message, "Shorten your link(s)...! > _<")
+        await reply(message, " Shorten your link(s)...! > _<")
         return true
     }
     if (headerFormatting) {
         tracer.log("NO HEADERS >:(")
-        await reply(message, "DON'T USE HEADERS...!!! > _<")
+        await reply(message, " DON'T USE HEADERS...!!! > _<")
         return true
     }
     if (!twoAttachmentOrLess) {
         tracer.log("ATTACHMENTS ARE BAD!!!")
-        await reply(message, "TOO MANY ATTACHMENTS ATTACHMENTS RGRGHRHAAAAAAAARGRGHRGHRARHARRR...!!! > _<")
+        await reply(message, " TOO MANY ATTACHMENTS ATTACHMENTS RGRGHRHAAAAAAAARGRGHRGHRARHARRR...!!! > _<")
         return true
     }
 
     if (!attachmentReqs) {
         tracer.log("Attachments don't fulfill requirements.")
-        await reply(message, "Image taller than 100px!! > _<")
+        await reply(message, " Image taller than 100px!! > _<")
         return true
     }
 

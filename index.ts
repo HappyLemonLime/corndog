@@ -35,7 +35,7 @@ const corndog: Corndog = new Client({
         GuildMembers,
         GuildPresences,
         GuildMessageTyping,
-        MessageContent
+        MessageContent,
     ],
     partials: [
         Message,
@@ -47,14 +47,14 @@ const corndog: Corndog = new Client({
 
 const { CLIENT_TOKEN, STATUS } = process.env
 
-corndog.login(CLIENT_TOKEN)
+corndog.login("token goes here lol")
 const extension = __filename.split(".").pop() === 'ts' ? '.ts' : '.js'
 
 corndog.commands = new Collection(); corndog.app = app;
-corndog.undici = new UndiciClient("http://localhost:5000", {
-    maxHeaderSize: 100000,
-})
-export const undici = corndog.undici
+// corndog.undici = new UndiciClient("http://localhost:5000", {
+//     maxHeaderSize: 100000,
+// })
+// export const undici = corndog.undici
 
 async function getCommands() {
     const commandsPath = path.join(__dirname, 'commands');

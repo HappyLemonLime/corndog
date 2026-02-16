@@ -9,7 +9,7 @@ import netty from '../../net'
 import judgeForReactChannel from "./judgeForReactChannel";
 
 export default new ReadableEvent("messageCreate", async (message: Message) => {
-    if (message.author.id === config.clientId) return;
+    // if (message.author.id === config.clientId) return;
     const { channel } = message
     if (channel.isThread()) {
         if (channel.parentId === channels["critique"]) message.react(emojis.hand)

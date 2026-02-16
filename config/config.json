@@ -1,6 +1,6 @@
 {
-    "clientId": "768271635014746112",
-    "guildId": "235138363131166728",
+    "clientId": "1444746302314516665",
+    "guildId": "1444755717725622365",   
     "colors": [
         "#e300ff",
         "#6a00ff"
@@ -97,5 +97,17 @@
         "youtu.be",
         "x.com",
         "twitter.com"
-    ]
+    ],
+
+    "test_server_ids": ["1444755717725622365"],
+
+    "developer_ids": ["892271984673706025"],
+    
+    "enableWebServer": true,
+    "serverPort": 6880,
+    "siteURL": "http://localhost:6880",
+    
+    "changelogURL": "",
+    "supportURL": ""
+
 }
