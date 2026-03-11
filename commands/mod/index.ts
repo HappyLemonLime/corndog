@@ -10,8 +10,8 @@ import { TimeControl } from "../../redis/entities";
 export default new ReadableCommand(new SlashCommandBuilder().setName("mod").setDescription("Moderation actions.").setDefaultMemberPermissions(PermissionFlagsBits.ModerateMembers)
     .addSubcommand(subcommand => subcommand.setName("timeout").setDescription("Times out a member. Logs the action in #audit.")
         .addUserOption(option => option.setName("member").setDescription("Member to time out.").setRequired(true))
-        .addIntegerOption(option => option.setName("length").setDescription("How long to time out the member").setRequired(true).setMinValue(0))
         .addStringOption(option => option.setName("reason").setDescription("Reason for timing the member out.").setRequired(true))
+        .addIntegerOption(option => option.setName("length").setDescription("How long to time out the member (in minutes)").setRequired(true).setMinValue(0))
     )
     .addSubcommand(subcommand => subcommand.setName("kick").setDescription("Kicks a member. Logs the action in #audit.")
         .addUserOption(option => option.setName("member").setDescription("Member to kick.").setRequired(true))
@@ -57,7 +57,7 @@ export default new ReadableCommand(new SlashCommandBuilder().setName("mod").setD
                         action === "offense" ? "granted an offense to" :
                             "moderated"
         const summary = `
-${moderator.user.username} ${preterite} ${member.user.username}.\n\n**Length:** ${length ? length + " min" : "N/A"}\n**Reason:** ${reason}
+        ${moderator.user.username} ${preterite} ${member.user.username}.\n\n**Length:** ${length ? length + " min" : "N/A"}\n**Reason:** ${reason}
 `
         const resolveAction = async (promise: Promise<any>) => promise.catch(async (err) => {
             tracer.error(err)
