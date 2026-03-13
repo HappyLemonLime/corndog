@@ -16,7 +16,7 @@ export default new ReadableEvent(
         tracer.woof("Woof! :3")
         corndog.user.setStatus(STATUS as ClientPresenceStatus)
         corndog.user.setActivity({
-            name: "with my tail! :3",
+            name: `with my tail! ${emote("ascii")}`,
             type: ActivityType.Playing,
             url: "https://www.youtube.com/watch?v=7Ukoh6d4UVg"
         })
@@ -31,7 +31,10 @@ export default new ReadableEvent(
         
                 commands.send("Time control resumption looks good too!")
             }],
-            ["weeklies", async (timeControl) => {}]
+            ["weeklies", async (timeControl) => {}],
+            ["ban", async (timeControl) => {
+                guild.bans.remove(timeControl.user)
+            }]
         ]))
     },
     true

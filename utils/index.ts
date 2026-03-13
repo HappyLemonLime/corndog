@@ -1,5 +1,5 @@
 export { getPurple } from "./getPurple"
-export { hasUrl } from './hasUrl';
+export { hasUrl } from './hasUrl/hasUrl';
 export { hasSauce } from './hasSauce';
 export { emojis } from "./emojis"
 export { time } from "./time"
@@ -22,3 +22,4 @@ export { getRole } from './getRole'
 export { getReactions } from './getReactions'
 export { impartial } from './impartial'
 export { hasHeaders } from './hasHeaders'
+export { parseMessage } from './parseMessage'

@@ -8,6 +8,7 @@ interface Emotions {
     neutral: Emotion,
     cat: Emotion,
     glomp: Emotion,
+    ascii: Emotion,
 }
 export const emote = (emotion: keyof Emotions) => {
     return emotions[emotion][Math.floor(Math.random() * emotions[emotion].length)]

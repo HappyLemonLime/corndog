@@ -1,12 +1,14 @@
 {
-    "clientId": "768271635014746112",
-    "guildId": "235138363131166728",
+    "clientId": "1444746302314516665",
+    "guildId": "1444755717725622365",   
     "colors": [
         "#e300ff",
         "#6a00ff"
     ],
     "modWhitelist": [
+        "reuitruit",
         "pastelink.net",
+        "tinyurl.com/preview/deprecated/",
         "pastebin.com",
         "beepbox.co",
         "moddedbeepbox.github.io/3.0",
@@ -28,6 +30,7 @@
         "logn35.github.io/WideBox",
         "lihzahrd.github.io/blackbox",
         "jummb.us",
+        "jummbus.bitbucket.io",
         "lihzahrd.github.io/bassbox",
         "slidecode.github.io/sliderbox.github.io/website/3_0",
         "hidden-realm.github.io/beepbox1bar",
@@ -63,6 +66,7 @@
         "choptop84.github.io/abyssbox-gay",
         "choptop84.github.io/abyssbox-wackybox",
         "choptop84.github.io/abyssbox-experimental",
+        "choptop84.github.io/abyssbox-archives",
         "neptendo.github.io/nepbox",
         "un-conventional.github.io",
         "choptop84.github.io/shitbox4",
@@ -73,14 +77,19 @@
         "mmmdonuts2008.github.io/AwesomeBox/website",
         "slarmoo.github.io/slarmoosbox/website",
         "slarmoo.github.io/slarmoosboxtesting/website",
+        "box.slarmoo.com",
+        "jukeebox.github.io",
         "voxeldeev.github.io/voxbox/website",
         "choptop84.github.io/TBB-app",
         "martsnack.github.io/beepbox",
         "lihzahrd.github.io/3.0nomidi",
         "dinobox.vercel.app",
         "sxomus.neocities.org/axobox",
-        "lemmbox.github.io"
-    ],
+        "lemmbox.github.io",
+        "terabyte-official.github.io/diamondbox/website",
+        "sera-ph1m.github.io/Tesseract/",
+        "VeryImpossibleThingToGuess"
+    ], 
     "urlWhitelist": [
         "youtube.com",
         "soundcloud.com",
@@ -88,5 +97,17 @@
         "youtu.be",
         "x.com",
         "twitter.com"
-    ]
+    ],
+
+    "test_server_ids": ["1444755717725622365"],
+
+    "developer_ids": ["892271984673706025"],
+    
+    "enableWebServer": true,
+    "serverPort": 6880,
+    "siteURL": "http://localhost:6880",
+    
+    "changelogURL": "",
+    "supportURL": ""
+
 }
