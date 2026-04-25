@@ -1,6 +1,6 @@
 {
     "clientId": "1444746302314516665",
-    "guildId": "1444755717725622365",   
+    "guildId": "1444755717725622365",
     "colors": [
         "#e300ff",
         "#6a00ff"
@@ -45,6 +45,7 @@
         "todbox.github.io/bruhmoment",
         "jodellm27.github.io/toughbox/",
         "jimothee.bitbucket.io",
+        "thereallogg123.github.io/bulbbox-app",
         "nintarigenesis.bitbucket.io",
         "aurysystem.github.io/goldbox",
         "aurysystem.github.io/goldbox/unstable",
@@ -88,6 +89,9 @@
         "lemmbox.github.io",
         "terabyte-official.github.io/diamondbox/website",
         "sera-ph1m.github.io/Tesseract/",
+        "https://choptop84.github.io/abyssbox-alt",
+        "https://choptop84.github.io/abyssbox-archives",
+        "https://41popzic.github.io/41box-app",
         "VeryImpossibleThingToGuess"
     ], 
     "urlWhitelist": [
@@ -97,17 +101,5 @@
         "youtu.be",
         "x.com",
         "twitter.com"
-    ],
-
-    "test_server_ids": ["1444755717725622365"],
-
-    "developer_ids": ["892271984673706025"],
-    
-    "enableWebServer": true,
-    "serverPort": 6880,
-    "siteURL": "http://localhost:6880",
-    
-    "changelogURL": "",
-    "supportURL": ""
-
+    ]
 }
